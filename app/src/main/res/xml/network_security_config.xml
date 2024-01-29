@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- API28 부터 Http 요청 시 OkHttp - not permitted by network security policy 예외발생으로 Http 요청 허가 -->
+    <base-config cleartextTrafficPermitted="true"/>
+    <!-- Http Proxy 사용을 위해 사용자가 허가한 인증서에 대해서 접근을 허용 -->
+    <debug-overrides>
+        <trust-anchors>
+            <certificates src="user" />
+        </trust-anchors>
+    </debug-overrides>
+</network-security-config>
